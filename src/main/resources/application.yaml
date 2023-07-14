@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: '@Shivam0406'
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/todo_app
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+jwt:
+  secret: supersecret
+  tokenValidity: 36000
+
+redis:
+  database: 0
+  host: 127.0.0.1
+  port: 6379
+  pool:
+    max-active: 5
+    max-wait: -1
+    max-idle: 8
+    min-idle: 0
+  timeout: 3000
